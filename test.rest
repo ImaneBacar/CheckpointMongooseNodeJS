@@ -1,0 +1,21 @@
+GET http://localhost:3000/api
+
+###
+
+POST http://localhost:3000/api
+Content-Type: application/json
+
+[
+{
+    "name":"aita",
+    "age":22,
+    "favoriteFoods":
+        ["Tieb Dienne","tacos"]
+},
+
+{
+    "name":"JF",
+    "age":22,
+    "favoriteFoods":
+        ["Tieb "," panini"]
+}]
