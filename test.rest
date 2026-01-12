@@ -24,11 +24,11 @@ Content-Type: application/json
 
 
 ### Supprimer une personne
-DELETE http://localhost:3000/api/personnes/695ee240dc56eea0ef9be633
+DELETE http://localhost:3000/api/personnes/695ee4d663a297de682174d6
 
 
 ### Mettre à jour une personne
-PATCH http://localhost:3000/api/personnes/695f7e8e84a31ae95690388f
+PATCH http://localhost:3000/api/personnes/695f7e8e84a31ae956903890
 Content-Type: application/json
 
 {

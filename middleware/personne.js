@@ -7,11 +7,10 @@ const getPersonne = async (req, res, next) => {
         return res.status(400).json({ message: 'ID invalide' })
     }
 
-    let personne
     try {
-         const personne = await Personne.findById(req.params.id)
-        if (!personne) return res.status(404).json({ message: 'Personne inexistante' })
-        res.personne = personne  
+         const personneMid = await Personne.findById(req.params.id)
+        if (!personneMid) return res.status(404).json({ message: 'Personne inexistante' })
+        res.personneMid = personneMid  
         next()
     } catch (error) {
         return res.status(500).json({ message: error.message })

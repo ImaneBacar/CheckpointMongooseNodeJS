@@ -30,20 +30,20 @@ const allPersonne = async (req,res)=> {
 }
 
 const onePersonne = (req,res)=>{
-    res.json(res.personne.body)
+    res.json(res.personneMid)
 }
 
 const updatedPersonne = async (req, res) => {
-    if (!res.personne) {
+    if (!res.personneMid) {
         return res.status(404).json({ message: 'Personne non trouvée' })
     }
 
-    if (req.body.name != null) res.personne.name = req.body.name
-    if (req.body.age != null) res.personne.age = req.body.age
-    if (req.body.favoriteFoods != null) res.personne.favoriteFoods = req.body.favoriteFoods
+    if (req.body.name != null) res.personneMid.name = req.body.name
+    if (req.body.age != null) res.personneMid.age = req.body.age
+    if (req.body.favoriteFoods != null) res.personneMid.favoriteFoods = req.body.favoriteFoods
 
     try {
-        const updated = await res.personne.save()
+        const updated = await res.personneMid.save()
         res.json(updated)
     } catch (error) {
         res.status(400).json({ message: error.message })
@@ -51,7 +51,7 @@ const updatedPersonne = async (req, res) => {
 }
 const deletePersonne = async(req,res)=>{
     try {
-        await res.personne.deleteOne()
+        await res.personneMid.deleteOne()
         res.json({message : '  Personne supprimer '})
     } catch (err) {
         res.status(500).json({message : err.message})
