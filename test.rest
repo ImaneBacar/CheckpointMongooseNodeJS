@@ -1,21 +1,38 @@
-GET http://localhost:3000/api
+### Récupérer toutes les personnes
+GET http://localhost:3000/api/personnes
 
-###
+### Récupérer une personne par ID
+GET http://localhost:3000/api/personnes/695f7e8e84a31ae95690388f
 
-POST http://localhost:3000/api
+
+### Création de 2 personnes
+POST http://localhost:3000/api/personnes
 Content-Type: application/json
 
 [
-{
-    "name":"aita",
-    "age":22,
-    "favoriteFoods":
-        ["Tieb Dienne","tacos"]
-},
+  {
+    "name": "aita",
+    "age": 22,
+    "favoriteFoods": ["Tieb Dienne", "tacos"]
+  },
+  {
+    "name": "JF",
+    "age": 22,
+    "favoriteFoods": ["Tieb", "panini"]
+  }
+]
+
+
+### Supprimer une personne
+DELETE http://localhost:3000/api/personnes/695ee240dc56eea0ef9be633
+
+
+### Mettre à jour une personne
+PATCH http://localhost:3000/api/personnes/695f7e8e84a31ae95690388f
+Content-Type: application/json
 
 {
-    "name":"JF",
-    "age":22,
-    "favoriteFoods":
-        ["Tieb "," panini"]
-}]
+  "name": "aita Diagne",
+  "age": 21,
+  "favoriteFoods": ["Pilao", "tacos"]
+}
